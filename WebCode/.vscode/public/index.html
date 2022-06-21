@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>AUTONOMOUS ROTARY DRUM FILTER - CONTROL MENU</title>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+
+    <script src="scripts/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="topnav">
+      <h1>Sensor Readings App <i class="fas fa-clipboard-list"></i></h1>
+    </div>
+    <p></p>
+
+    <div class="cards">
+      <!--TEMPERATURE-->
+      <div class="card">
+        <p>
+          <i class="fas fa-thermometer-half" style="color: #fa5102"></i>
+          TEMPERATURE
+        </p>
+        <p>
+          <span class="reading"><span id="temp"></span> &deg;C</span>
+        </p>
+      </div>
+
+      <!--RELAY 1-->
+      <div class="card">
+        <p>
+          <i class="fas fa-sync-alt" style="color: #6c2894"></i>
+          DRUM 
+        </p>
+        <p>
+          <span class="reading"><span id="drumstatus"></span> </span>
+        </p>
+      </div>
+
+      <!--TANK SIZE-->
+      <div class="card">
+        <p>
+          <i class="fas fa-tint" style="color: #00add6"></i>
+          WATER LEVEL
+        </p>
+        <p>
+          <span class="reading"><span id="waterstatus"></span> </span>
+        </p>
+      </div>
+
+      <!-- ADRF POWER-->
+      <div class="card">
+        <p>
+
+          <i class="fas fa-power-off" style="color: #1dbb32"></i>
+          SYSTEM POWER
+        </p>
+        <p>
+          <span class="reading"><span id="systempower"></span>OFF - ON</span>
+        </p>
+        <p>
+          <div class="progress">
+
+            <div class= "toggle-btn1" id="unact1">
+              <div class= "inner-circle">
+        
+              </div>
+            </div>
+            <div class= "toggle-btn1 active" id="act1" >
+              <div class= "inner-circle">
+              </div>
+            </div>
+          </div>
+        </p> 
+      </div>
+
+       <!-- CLEAN DRUM-->
+       <div class="card">
+        <p>
+          <i class="fas fa-shower" style="color: #26adcf"></i>
+          CLEAN DRUM
+        </p>
+        <p>
+          <span class="reading"><span id="cleandrum"></span>OFF - ON</span>
+        </p>
+        <p>
+          <div class="progress">
+
+            <div class= "toggle-btn2" id="unact2">
+              <div class= "inner-circle">
+        
+              </div>
+            </div>
+            <div class= "toggle-btn2 active" id="act2" >
+              <div class= "inner-circle">
+              </div>
+            </div>
+          </div>
+        </p> 
+      </div>
+
+
+       <!-- WATER PUMP-->
+      <div class="card">
+        <p>
+          <i class="fas fa-faucet" style="color: #460ec9"></i>
+          WATER PUMP
+        </p>
+        <p>
+          <span class="reading"><span id="waterpump"></span>ON - OFF</span>
+        </p>
+        <p>
+          <div class="progress">
+
+            <div class= "toggle-btn3" id="unact3">
+              <div class= "inner-circle">
+        
+              </div>
+            </div>
+            <div class= "toggle-btn3 active" id="act3" >
+              <div class= "inner-circle">
+              </div>
+            </div>
+          </div>
+        </p> 
+      </div>
+
+
+
+      
+      <!-- end div card-->
+    </div >
+    <p></p>
+    <a class="icon1">
+      <i class="fab fa-5x fa-github-square"></i>
+      <p>
+        <div class="progress">
+          <p>Senior Project</p>
+          <p>To Giang Tuan Anh</p>
+          <p>EEACIU18133</p>
+          <p>Source code is available at </p>
+          <a href="https://github.com/KyleTo132">My Github repository</a>
+        </div>
+      </p>
+    </a>
+    
+
+
+
+
+
+    
+  </body>
+</html>
