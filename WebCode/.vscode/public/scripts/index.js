@@ -16,6 +16,7 @@ firebase.initializeApp(firebaseConfig);
 
 // Elements for sensor readings
 //const tempElement = document.getElementById("temp");
+//const tempRef = database.ref().child("TemperatureStatus");
 
 $(document).ready(function () {
   var database = firebase.database();
@@ -26,18 +27,6 @@ $(document).ready(function () {
   var TemperatureStatus;
   var DrumStatus;
   var WaterStatus;
-  //var tempElement = $("#temp");
-  //var dbRefTemp = firebase.database().ref().child("temperature");
-  //document.getElementById("temperature").style.display = "block";
-  // Update page with new readings
-  /*
-  dbRefTemp.on("value", (snap) => {
-    tempElement.innerText = snap.val();
-  });
-  */
-
-  //var temp_val = childSnapshot.val().temperature;
-  //$("#temp").append(temp_val);
 
   database.ref().on("value", function (snap) {
     Relay1Status = snap.val().Relay1Status;
@@ -46,13 +35,13 @@ $(document).ready(function () {
     //Relay4Status = snap.val().Relay4Status;
 
     TemperatureStatus = snap.val().TemperatureStatus;
-    $("#temp").append(TemperatureStatus);
+    $("#temp").empty().append(TemperatureStatus);
 
     WaterStatus = snap.val().WaterStatus;
-    $("#waterstatus").append(WaterStatus);
+    $("#waterstatus").empty().append(WaterStatus);
 
     DrumStatus = snap.val().DrumStatus;
-    $("#drumstatus").append(DrumStatus);
+    $("#drumstatus").empty().append(DrumStatus);
 
     if (Relay1Status == "1") {
       document.getElementById("unact1").style.display = "none";
